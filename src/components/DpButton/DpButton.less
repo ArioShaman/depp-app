@@ -1,0 +1,83 @@
+.dp-button {
+  border-width: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  /** states */
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.65;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: disabled;
+  }
+
+  /** sizes */
+  &--s {
+    padding: 8px 12px; 
+    border-radius: 20px;
+    font: var(--dp-subheadline-2-semi);
+  }
+
+  &--m {
+    padding: 11px 14px;
+    border-radius: 12px;
+    font: var(--dp-subheadline-2-semi);
+  }
+
+  &--l {
+    padding: 14px 80px;
+    border-radius: 10px;
+    font: var(--dp-text-semi);
+  }
+
+  /** appearance */
+  &--fill {
+    background-color: var(--button_color);
+    color: var(--button_text_color);
+  }
+
+  &--bezeled {
+    background-color: var(--secondary_fill);
+    color: var(--link_color);
+  }
+
+  &--plain {
+    color: var(--link_color);
+    background-color: color-mix(
+      in srgb,
+      var(--button_color) 0%,
+      transparent
+    );
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--button_color) 3%,
+        transparent
+      );
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--button_color) 5%,
+        transparent
+      );
+    }
+  }
+
+  &--gray {
+    color: var(--plain_foreground);
+    background-color: var(--plain_background);
+  }
+}
