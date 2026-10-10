@@ -2,6 +2,7 @@
 import './App.less'
 import { DpIcon } from '@components/DpIcon';
 import { DpButton } from '@components/DpButton';
+import { DpInlineButton } from '@components/DpInlineButton';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -18,35 +19,29 @@ function App() {
       />
 
       <div className="buttons">
-        <DpButton
-          size='l'
-          iconStart='qr_24'
-          iconEnd='mic_24'
+        <DpInlineButton
+          iconEnd='qr_24'
           appearance='bezeled'
           onClick={handleClick}
         >
-          Сохранить
-        </DpButton>
+          test
+        </DpInlineButton>
 
-        <DpButton
-          size='l'
+        <DpInlineButton
           iconStart='qr_24'
-          iconEnd='mic_24'
           appearance='plain'
           onClick={handleClick}
         >
-          Сохранить
-        </DpButton>
+          test
+        </DpInlineButton>
 
-        <DpButton
-          size='l'
-          iconStart='qr_24'
-          iconEnd='mic_24'
+        <DpInlineButton
+          iconStart='close'
           appearance='gray'
           onClick={handleClick}
         >
-          Сохранить
-        </DpButton>
+          test
+        </DpInlineButton>
       </div>
     </>
   )

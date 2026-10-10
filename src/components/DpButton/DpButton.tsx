@@ -17,7 +17,7 @@ interface DpButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance?: DpButtonAppearance;
   size?: DpButtonSize;
   loading?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   iconStart?: string;
   iconEnd?: string;
 }
@@ -32,6 +32,8 @@ export function DpButton({
   iconEnd,
   ...buttonProps
 }: DpButtonProps) {
+  const iconSize = size === 'l' ? 28 : 24;
+
   return (
     <button
       {...buttonProps}
@@ -40,7 +42,7 @@ export function DpButton({
     >
       {
         iconStart ? 
-          <DpIcon name={iconStart}/>
+          <DpIcon name={iconStart} size={iconSize}/>
         : null
       }
 
@@ -48,7 +50,7 @@ export function DpButton({
 
       {
         iconEnd ? 
-          <DpIcon name={iconEnd}/>
+          <DpIcon name={iconEnd} size={iconSize}/>
         : null
       }
     </button>

@@ -1,0 +1,64 @@
+.dp-inline-button {
+  border-width: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 10px 20px; 
+  border-radius: 20px;
+  font: var(--dp-caption-1-semi);
+
+  /** states */
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.65;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: disabled;
+  }
+
+  /** appearance */
+  &--bezeled {
+    background-color: var(--secondary_fill);
+    color: var(--link_color);
+  }
+
+  &--plain {
+    color: var(--link_color);
+    background-color: color-mix(
+      in srgb,
+      var(--button_color) 0%,
+      transparent
+    );
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--button_color) 3%,
+        transparent
+      );
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--button_color) 5%,
+        transparent
+      );
+    }
+  }
+
+  &--gray {
+    color: var(--plain_foreground);
+    background-color: var(--plain_background);
+  }
+}
