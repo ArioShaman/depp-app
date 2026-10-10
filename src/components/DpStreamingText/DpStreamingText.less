@@ -1,0 +1,29 @@
+.dp-steaming-text {
+  --stream-gap: 60ms;
+  --stream-fade: 350ms;
+  --stream-blur: 1px;
+  --stream-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  display: inline;
+
+  &__word {
+    opacity: 0;
+    filter: blur(var(--stream-blur));
+    
+    transition:
+      opacity var(--stream-fade) var(--stream-ease),
+      filter var(--stream-fade) var(--stream-ease);
+  }
+
+  &__word.is-visible {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .t-stream__word {
+      opacity: 1;
+      filter: none;
+      transition: none;
+    }
+  }
+}
