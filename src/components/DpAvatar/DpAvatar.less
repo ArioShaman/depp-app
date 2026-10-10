@@ -1,0 +1,109 @@
+:root {
+  /** Avatars */
+  --color-avatar-lime: #D9F99D;
+  --color-avatar-lavender: #DDD6FE;
+  --color-avatar-pink: #FBCFE8;
+  --color-avatar-blue: #BFDBFE;
+  --color-avatar-mint: #A7F3D0;
+  --color-avatar-peach: #FED7AA;
+  --color-avatar-yellow: #FDE68A;
+  --color-avatar-coral: #FECDD3;
+  --color-avatar-cyan: #A5F3FC;
+  --color-avatar-lilac: #E9D5FF;
+}
+
+.dp-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--skeleton);
+  clip-path: circle(50%);
+
+  img {
+    height: -webkit-fill-available;
+  }
+
+  &--skeleton {
+    background-color: var(--skeleton) !important;
+  }
+
+  &--size {
+    &_20 {
+      block-size: 20px;
+      inline-size: 20px;
+      font: var(--dp-caption-2-reg);
+    }
+
+    &_24 {
+      block-size: 24px;
+      inline-size: 24px;
+      font: var(--dp-caption-2-reg);
+    }
+
+    &_28 {
+      block-size: 28px;
+      inline-size: 28px;
+      font: var(--dp-caption-1-reg);
+    }
+
+    &_40 {
+      block-size: 40px;
+      inline-size: 40px;
+      font: var(--dp-caption-1-semi);
+    }
+
+    &_48 {
+      block-size: 48px;
+      inline-size: 48px;
+      font: var(--dp-subheadline-2-semi);
+    }
+
+    &_96 {
+      block-size: 96px;
+      inline-size: 96px;
+      font: var(--dp-large-title-semi);
+    }
+  }
+
+  &--color {
+    &_lime {
+      background-color: var(--color-avatar-lime);
+    }
+
+    &_lavender {
+      background-color: var(--color-avatar-lavender);
+    }
+
+    &_pink {
+      background-color: var(--color-avatar-pink);
+    }
+
+    &_blue {
+      background-color: var(--color-avatar-blue);
+    }
+
+    &_mint {
+      background-color: var(--color-avatar-mint);
+    }
+
+    &_peach {
+      background-color: var(--color-avatar-peach);
+    }
+
+    &_yellow {
+      background-color: var(--color-avatar-yellow);
+    }
+
+    &_coral {
+      background-color: var(--color-avatar-coral);
+    }
+
+    &_cyan {
+      background-color: var(--color-avatar-cyan);
+    }
+
+    &_lilac {
+      background-color: var(--color-avatar-lilac);
+    }
+  }
+}

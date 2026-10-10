@@ -1,48 +1,23 @@
 // import { useState } from 'react'
+import { DpAvatar } from '@components/DpAvatar';
 import './App.less'
-import { DpIcon } from '@components/DpIcon';
-import { DpButton } from '@components/DpButton';
-import { DpInlineButton } from '@components/DpInlineButton';
 
 function App() {
   // const [count, setCount] = useState(0)
-  const handleClick = () => {
-    console.log('clicked');
-  };
+  // const handleClick = () => {
+  //   console.log('clicked');
+  // };
 
   return (
     <>
       <h1 className='title'>Hello world</h1>
 
-      <DpIcon
-        name="qr_24"
-      />
-
-      <div className="buttons">
-        <DpInlineButton
-          iconEnd='qr_24'
-          appearance='bezeled'
-          onClick={handleClick}
-        >
-          test
-        </DpInlineButton>
-
-        <DpInlineButton
-          iconStart='qr_24'
-          appearance='plain'
-          onClick={handleClick}
-        >
-          test
-        </DpInlineButton>
-
-        <DpInlineButton
-          iconStart='close'
-          appearance='gray'
-          onClick={handleClick}
-        >
-          test
-        </DpInlineButton>
-      </div>
+      <DpAvatar
+        src='https://avatars.githubusercontent.com/u/16825894?v=4'
+        size={96}
+      >
+        Даниил Матвеев
+      </DpAvatar>
     </>
   )
 }
