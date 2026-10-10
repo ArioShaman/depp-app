@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './DpAvatar.less';
-import { getAvatarClass } from '@components/DpAvatar/color-class';
+import {getAvatarClass} from './color-class';
 
-type DpAvatarSize = 20 | 24 | 28 | 40 | 48 | 96;
-interface DpAvatarProps {
+export type DpAvatarSize = 20 | 24 | 28 | 40 | 48 | 96;
+export interface DpAvatarProps {
   size?: DpAvatarSize;
   skeleton?: boolean;
   src?: string;

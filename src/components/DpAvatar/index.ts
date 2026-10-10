@@ -1,1 +1,2 @@
-export * from './DpAvatar';
+export {DpAvatar} from './DpAvatar';
+export {DpStackedAvatar} from './DpStackedAvatar';
