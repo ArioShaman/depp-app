@@ -1,46 +1,35 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useLaunches } from '../../hooks/useLaunches';
+import { LaunchesTable } from '@widgets/launches-table';
+
 
 function LaunchesPage() {
-  const { data, isPending, isError, error } = useLaunches();
-
-  if (isPending) {
-    return <p>Loading launches...</p>;
-  }
-
-  if (isError) {
-    return <p>Error: {error.message}</p>;
-  }
-
-  if (data.length === 0) {
-    return <p>No launches found.</p>;
-  }
+  const { data: launches, isPending, isError, error } = useLaunches();
 
   return (
-    <section>
-      <h2>SpaceX Launches</h2>
+    <section className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Launches</h1>
+        <p className="mt-2 text-muted-foreground">
+          Explore SpaceX missions and their launch history.
+        </p>
+      </div>
 
-      <ul>
-        {data.map((launch) => (
-          <li>
-            <h3>
-              #{launch.name}
-            </h3>
+      {isPending && (
+        <p className="text-sm text-muted-foreground">
+          Loading launches…
+        </p>
+      )}
 
-            <p>
-              Date: {new Date(launch.date_utc).toLocaleDateString()}
-            </p>
+      {isError && (
+        <p role="alert" className="text-sm text-destructive">
+          Failed to load launches: {error.message}
+        </p>
+      )}
 
-            <p>
-              Status:{' '}
-              { launch.success === null ? 'Unknown'
-                  : launch.success
-                    ? 'Success'
-                    : 'Failed'}
-            </p>
-          </li>
-        ))}
-      </ul>
+      {launches && !isPending && (
+        <LaunchesTable launches={launches} />
+      )}
     </section>
   );
 }
